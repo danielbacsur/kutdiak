@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import "@/styles/globals.css";
 import { ReactNode } from "react";
 import { TeamProvider } from "@/lib/contexts/team";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Toaster richColors />
-        <TeamProvider>{children}</TeamProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TeamProvider>{children}</TeamProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
