@@ -59,7 +59,7 @@ export default function Prediction({ team, question }: Prediction) {
       </div>
 
       <AlertDialog>
-        <AlertDialogTrigger asChild>
+        <AlertDialogTrigger asChild disabled={question.revealed}>
           <Button variant="default">Kép Feloldása</Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
