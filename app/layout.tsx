@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Toaster richColors />
+        <Toaster richColors position="top-center" />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

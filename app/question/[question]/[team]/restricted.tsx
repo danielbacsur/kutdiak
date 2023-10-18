@@ -1,7 +1,6 @@
 "use client";
 
-import { DocumentData, doc, getDoc, updateDoc } from "firebase/firestore";
-import { firestore } from "@/lib/utils/firestore";
+import { DocumentData } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -10,7 +9,6 @@ interface Restricted {
 }
 
 export default function Restricted({ team }: Restricted) {
-  const [name, setName] = useState("000000");
   const router = useRouter();
 
   const handleSubmit = async () => {
