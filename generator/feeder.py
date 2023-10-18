@@ -1,28 +1,36 @@
-import os
+from firebase_admin import credentials, firestore
+import firebase_admin
+import qrcode
+import random
 import uuid
 import json
-import random
-import firebase_admin
-from firebase_admin import credentials, firestore
 import re
-
-
-
-
+import os
 
 
 def delete_all_files(directory):
-    files = [f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
+    files = [
+        f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))
+    ]
     for file in files:
         os.remove(os.path.join(directory, file))
 
-# Example usage:
+
+def generate_qr(url, file_name):
+    qr = qrcode.QRCode(
+        version=1,  # controls the size of the QR Code
+        error_correction=qrcode.constants.ERROR_CORRECT_L,  # controls the error correction used for the QR Code
+        box_size=10,  # controls how many pixels each “box” of the QR code is
+        border=4,  # controls how many boxes thick the border should be
+    )
+    qr.add_data(url)
+    qr.make(fit=True)
+
+    img = qr.make_image(fill_color="black", back_color="white")
+
+    img.save(file_name)
 
 
-
-
-
-# Initialize Firebase Admin
 cred = credentials.Certificate(
     {
         "type": "service_account",
@@ -42,39 +50,33 @@ firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
-# Clear previous data in teams collection
 teams_docs = db.collection("teams").stream()
 for doc in teams_docs:
     doc.reference.delete()
 
-# Clear previous data in questions collection
 questions_docs = db.collection("questions").stream()
 for doc in questions_docs:
     doc.reference.delete()
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Combine the directory with your relative path
 relative_path = "./questions.json"
 full_path = os.path.join(script_dir, relative_path)
 
-delete_all_files(script_dir+"/images/")
+delete_all_files(script_dir + "/images/")
 
 
-# Read JSON File
 with open(full_path, "r") as file:
     data = json.load(file)
 
 questions_data = data["questions"]
 
-# Upload each question to the questions collection and assign a random UUID
 for question in questions_data:
     question["id"] = str(uuid.uuid4())
     question["revealed"] = False
     db.collection("questions").document(question["id"]).set(question)
 
-# Assuming there are 'n' teams
-n = 6
+n = 40
 for i in range(n):
     team_code = str(random.randint(100000, 999999))
     random.shuffle(questions_data)
@@ -85,25 +87,10 @@ for i in range(n):
 print("Data filled successfully!")
 
 
-
-import qrcode
-
-def generate_qr(url, file_name):
-    # Create an instance of the QRCode class
-    qr = qrcode.QRCode(
-        version=1,  # controls the size of the QR Code
-        error_correction=qrcode.constants.ERROR_CORRECT_L,  # controls the error correction used for the QR Code
-        box_size=10,  # controls how many pixels each “box” of the QR code is
-        border=4,  # controls how many boxes thick the border should be
-    )
-    qr.add_data(url)
-    qr.make(fit=True)
-
-    img = qr.make_image(fill_color="black", back_color="white")
-
-    img.save(file_name)
-
-# Example usage:
 for question in questions_data:
-    generate_qr("https://kutdiak.danielbacsur.dev/question/" + question["id"], script_dir + "/images/" + re.compile(r'[\/:*?"<>|]').sub('', ( question["question"].strip() + ".png")))
-
+    generate_qr(
+        "https://kutdiak.danielbacsur.dev/question/" + question["id"],
+        script_dir
+        + "/images/"
+        + re.compile(r'[\/:*?"<>|]').sub("", (question["question"].strip() + ".png")),
+    )
