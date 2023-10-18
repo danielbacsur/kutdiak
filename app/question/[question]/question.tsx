@@ -26,10 +26,6 @@ export default function Question({ question }: Question) {
     }
   };
 
-  useEffect(() => {
-    handleSubmit(false);
-  }, [team]);
-
   return (
     <div className="h-full flex flex-col items-center justify-center space-y-4">
       <input
