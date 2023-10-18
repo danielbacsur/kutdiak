@@ -55,7 +55,7 @@ export default function Prediction({ team, question }: Prediction) {
         className="bg-cover bg-center rounded-md"
         style={{ backgroundImage: `url(${question.image})` }}
         />
-      : <div className="grid place-items-center rounded-md bg-primary text-primary-foreground">A kép zárolva van</div>}
+      : <div className="grid place-items-center rounded-md bg-foreground text-background ">A kép zárolva van</div>}
       </div>
 
       <AlertDialog>
