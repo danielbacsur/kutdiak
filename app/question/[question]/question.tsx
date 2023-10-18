@@ -39,7 +39,7 @@ export default function Question({ question }: Question) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      teamcode: "",
+      teamcode: team,
     },
   });
 
