@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "location": "Paris",
+      "image": "/images/paris.jpg",
+      "question": "What is the capital of France?",
+      "answer": "Paris"
+    },
+    {
+      "location": "Tokyo",
+      "image": "/images/tokyo.jpg",
+      "question": "Which city is known for its iconic Skytree tower?",
+      "answer": "Tokyo"
+    },
+    {
+      "location": "Cairo",
+      "image": "/images/cairo.jpg",
+      "question": "Which city is home to the ancient pyramids of Giza?",
+      "answer": "Cairo"
+    }
+  ]
+}
