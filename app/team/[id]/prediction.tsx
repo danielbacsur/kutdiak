@@ -50,21 +50,12 @@ export default function Prediction({ team, question }: Prediction) {
     <div className="h-full flex flex-col p-4 space-y-4">
       <div className="flex-grow grid grid-rows-2 space-y-4">
         <div className="grid place-items-center">{question.location}</div>
-        <div>
-          {question.revealed ? (
-            <img
-              src={question.image}
-              alt={question.location}
-              className="rounded-md object-cover h-full w-full"
-            />
-          ) : (
-            <img
-              src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
-              alt="Photo by Drew Beamer"
-              className="rounded-md object-cover h-full w-full"
-            />
-          )}
-        </div>
+        {question.revealed ? 
+        <div
+        className="bg-cover bg-center rounded-md"
+        style={{ backgroundImage: `url(${question.image})` }}
+        />
+      : <div className="grid place-items-center rounded-md bg-primary text-primary-foreground">A kép zárolva van</div>}
       </div>
 
       <AlertDialog>
