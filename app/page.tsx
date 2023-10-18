@@ -79,17 +79,4 @@ export default function Start() {
       </Form>
     </div>
   );
-
-  // return (
-  // <div className="h-full flex flex-col items-center justify-center space-y-4">
-  //   <input
-  //     value={team}
-  //     className="text-black text-center"
-  //     placeholder="123456"
-  //     onChange={(e) => setTeam(e.target.value)}
-  //   />
-  //   <button onClick={handleSubmit}>Start</button>
-  // </div>
-
-  // );
 }
