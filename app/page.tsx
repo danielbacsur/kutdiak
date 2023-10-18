@@ -2,20 +2,20 @@
 
 import { firestore } from "@/lib/utils/firestore";
 import { doc, getDoc } from "firebase/firestore";
+import { useTeam } from "@/lib/contexts/team";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { toast } from "sonner";
 
 export default function Start() {
-  const [code, setCode] = useState("000000");
+  const [team, setTeam] = useTeam();
   const router = useRouter();
 
   const handleSubmit = async () => {
-    const reference = doc(firestore, "teams", code);
+    const reference = doc(firestore, "teams", team);
     const snapshot = await getDoc(reference);
 
     if (snapshot.exists()) {
-      router.push(`/team/${code}`);
+      router.push(`/team/${team}`);
     } else {
       toast.error("A kód nem érvényes!");
     }
@@ -24,9 +24,10 @@ export default function Start() {
   return (
     <div className="h-full flex flex-col items-center justify-center space-y-4">
       <input
+        value={team}
         className="text-black text-center"
-        placeholder="000000"
-        onChange={(e) => setCode(e.target.value)}
+        placeholder="123456"
+        onChange={(e) => setTeam(e.target.value)}
       />
       <button onClick={handleSubmit}>Start</button>
     </div>

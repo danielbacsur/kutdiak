@@ -10,10 +10,12 @@ interface Rename {
 }
 
 export default function Rename({ team }: Rename) {
-  const [name, setName] = useState("000000");
+  const [name, setName] = useState("");
   const router = useRouter();
 
   const handleSubmit = async () => {
+    if (name === "") return;
+
     const reference = doc(firestore, "teams", team.id);
     await updateDoc(reference, { name });
     router.refresh();

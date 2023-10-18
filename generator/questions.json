@@ -1,22 +1,84 @@
 {
   "questions": [
     {
-      "location": "Paris",
-      "image": "/images/paris.jpg",
-      "question": "What is the capital of France?",
-      "answer": "Paris"
+      "id": "4c190cb1-0001-4234-a179-42b4e344ef59",
+      "location": "Budai Vár",
+      "image": "/images/castle.jpg",
+      "question": "Ki volt az első magyar nőbel díjas?",
+      "answer": "Szent-Györgyi Albert",
+      "revealed": false
     },
     {
-      "location": "Tokyo",
-      "image": "/images/tokyo.jpg",
-      "question": "Which city is known for its iconic Skytree tower?",
-      "answer": "Tokyo"
+      "id": "e59cc5af-0002-4e11-a696-8631f322af5f",
+      "location": "Hősök tere",
+      "image": "/images/monument.jpg",
+      "question": "Melyik évben volt a magyar forradalom?",
+      "answer": "1956",
+      "revealed": false
     },
     {
-      "location": "Cairo",
-      "image": "/images/cairo.jpg",
-      "question": "Which city is home to the ancient pyramids of Giza?",
-      "answer": "Cairo"
+      "id": "6402413d-0003-4d17-aab7-3778dd31cb8e",
+      "location": "Városliget",
+      "image": "/images/park.jpg",
+      "question": "Melyik magyar feltaláló nevéhez fűződik a dinamó?",
+      "answer": "Jedlik Ányos",
+      "revealed": false
+    },
+    {
+      "id": "e4d3a8ce-0004-4ea5-ae8f-8edc7a9e1090",
+      "location": "Margitsziget",
+      "image": "/images/island.jpg",
+      "question": "Mi a Rubik kocka feltalálójának a neve?",
+      "answer": "Rubik Ernő",
+      "revealed": false
+    },
+    {
+      "id": "5120d0e9-0005-46bf-96d8-b21d582eea00",
+      "location": "Gellért-hegy",
+      "image": "/images/hill.jpg",
+      "question": "Hány lába van a millipédnek? Számmal válaszoljatok!",
+      "answer": "1000",
+      "revealed": false
+    },
+    {
+      "id": "75f96e02-0006-4675-b674-a2ac590a6688",
+      "location": "Fővám tér",
+      "image": "/images/market.jpg",
+      "question": "Melyik madár a leggyorsabb a világon?",
+      "answer": "Sólyom",
+      "revealed": false
+    },
+    {
+      "id": "a6d90cfa-0007-41bb-9e22-a4d80918ffe0",
+      "location": "Nyugati tér",
+      "image": "/images/station.jpg",
+      "question": "Mi a legnagyobb természetes tó Magyarországon?",
+      "answer": "Balaton",
+      "revealed": false
+    },
+    {
+      "id": "fd84ba64-0008-4b25-b44e-fffadffcd611",
+      "location": "Kálvin tér",
+      "image": "/images/square.jpg",
+      "question": "Melyik városban található a Széchenyi fürdő?",
+      "answer": "Budapest",
+      "revealed": false
+    },
+    {
+      "id": "25b1c704-0009-423c-89cd-5b651f180e84",
+      "location": "Andrássy út",
+      "image": "/images/avenue.jpg",
+      "question": "Melyik évben nyertek aranyérmet a magyar vízilabda csapat a melbournei olimpián?",
+      "answer": "1956",
+      "revealed": false
+    },
+    {
+      "id": "2f8ef5d9-0010-458b-ab58-d79f3d4905dc",
+      "location": "Oktogon",
+      "image": "/images/intersection.jpg",
+      "question": "Melyik magyar feltaláló nevéhez fűződik a helikopter alapelvének a kidolgozása?",
+      "answer": "Asbóth Oszkár",
+      "revealed": false
     }
   ]
 }
