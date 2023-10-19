@@ -57,6 +57,8 @@ export default function Solve({ team, question }: Restricted) {
         guesses: team.guesses + 1,
       });
 
+      router.refresh()
+
       toast.error("A megoldásod helytelen.");
     }
   }
