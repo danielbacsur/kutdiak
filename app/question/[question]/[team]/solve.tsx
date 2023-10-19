@@ -52,13 +52,16 @@ export default function Solve({ team, question }: Restricted) {
       router.push(`/team/${team.id}/?success=true`);
     } else {
       const reference = doc(firestore, "teams", team.id);
+      const snapshot = await getDoc(reference);
 
-      await updateDoc(reference, {
-        guesses: team.guesses + 1,
-      });
+      if (snapshot.exists()) {
+        const data = snapshot.data();
 
-      router.refresh()
-
+        await updateDoc(reference, {
+          guesses: data.guesses + 1,
+        });
+      }
+      
       toast.error("A megoldásod helytelen.");
     }
   }
