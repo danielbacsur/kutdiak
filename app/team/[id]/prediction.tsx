@@ -33,6 +33,7 @@ export default function Prediction({ team, question }: Prediction) {
 
     await updateDoc(reference, {
       ...team,
+      reveals: team.reveals + 1,
       questions: [
         ...team.questions.slice(0, team.current),
         {

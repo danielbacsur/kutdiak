@@ -51,6 +51,12 @@ export default function Solve({ team, question }: Restricted) {
 
       router.push(`/team/${team.id}/?success=true`);
     } else {
+      const reference = doc(firestore, "teams", team.id);
+
+      await updateDoc(reference, {
+        guesses: team.guesses + 1,
+      });
+
       toast.error("A megoldásod helytelen.");
     }
   }

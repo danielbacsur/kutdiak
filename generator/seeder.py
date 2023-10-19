@@ -88,11 +88,15 @@ def main():
         team_id = str(random.randint(100000, 999999))
         team_name = ""
         team_current = 0
+        team_reveals = 0
+        team_guesses = 0
         team_document = {
             "id": team_id,
             "name": team_name,
             "current": team_current,
             "questions": questions,
+            "reveals": team_reveals,
+            "guesses": team_guesses,
         }
 
         database.collection("teams").document(team_id).set(team_document)
