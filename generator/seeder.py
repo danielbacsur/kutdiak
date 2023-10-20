@@ -51,8 +51,7 @@ database = firestore.client()
 
 absolute_path = os.path.dirname(os.path.abspath(__file__))
 
-questions_file = "./questions.json"
-questions_path = os.path.join(absolute_path, questions_file)
+
 
 
 def main():
@@ -61,46 +60,50 @@ def main():
     remove_documents("questions")
     remove_files(absolute_path + "/images/")
 
-    # Open questions.json file
-    with open(questions_path, "r", encoding="utf-8") as file:
-        questions = json.load(file)["questions"]
-
-    # Upload questions to firestore
-    for question in questions:
-        database.collection("questions").document(question["id"]).set(question)
-
-    # Generate QR codes
-    for question in questions:
-        generate_qr(
-            "https://kutdiak.danielbacsur.dev/question/" + question["id"],
-            absolute_path
-            + "/images/"
-            + re.compile(r'[\/:*?"<>|]').sub(
-                "", (question["location"].strip() + ".png")
-            ),
-        )
-
     print("Listing team codes and task ids:\n")
 
-    for i in range(NUMBER_OF_TEAMS):
-        random.shuffle(questions)
+    for questions_file in ["./questions-one.json", "./questions-two.json"]:
+        questions_path = os.path.join(absolute_path, questions_file)
 
-        team_id = str(random.randint(100000, 999999))
-        team_name = ""
-        team_current = 0
-        team_reveals = 0
-        team_guesses = 0
-        team_document = {
-            "id": team_id,
-            "name": team_name,
-            "current": team_current,
-            "questions": questions,
-            "reveals": team_reveals,
-            "guesses": team_guesses,
-        }
+        # Open questions.json file
+        with open(questions_path, "r", encoding="utf-8") as file:
+            questions = json.load(file)["questions"]
 
-        database.collection("teams").document(team_id).set(team_document)
-        print(team_id, "-", questions[0]["id"])
+        # Upload questions to firestore
+        for question in questions:
+            database.collection("questions").document(question["id"]).set(question)
+
+        # Generate QR codes
+        for question in questions:
+            generate_qr(
+                "https://kutdiak.danielbacsur.dev/question/" + question["id"],
+                absolute_path
+                + "/images/"
+                + re.compile(r'[\/:*?"<>|]').sub(
+                    "", (question["image"].replace("images/", "").strip())
+                ),
+            )
+
+
+        for i in range(2):
+            if i: questions.reverse()
+
+            team_id = str(random.randint(100000, 999999))
+            team_name = ""
+            team_current = 0
+            team_reveals = 0
+            team_guesses = 0
+            team_document = {
+                "id": team_id,
+                "name": team_name,
+                "current": team_current,
+                "questions": questions,
+                "reveals": team_reveals,
+                "guesses": team_guesses,
+            }
+
+            database.collection("teams").document(team_id).set(team_document)
+            print(team_id, "-", questions[0]["id"])
 
     print("\nData feeded successfully!")
 

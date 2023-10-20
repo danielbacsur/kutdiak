@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "id": "B01",
+      "location": "Hol a bölcsesség hollói szárnyalnak, A tudás szentélyében, sötét fák alatt. Csend és béke, ott találod a kódot, keresd madárfészek alatt!",
+      "image": "/images/corvinus.jpg",
+      "question": "Hány főbejárata van a Corvinus Egyetem E épületének (vámpalota)?",
+      "answer": "3",
+      "revealed": false
+    },
+    {
+      "id": "B02",
+      "location": "Vizek fölött át megyek, határt nem ismerve, nyugati partomon a korlát alá vagyok rejtve.",
+      "image": "/images/side-of-the-bridge.jpg",
+      "question": "Mi volt a Szabadság híd eredeti neve?",
+      "answer": "Ferenc József híd",
+      "revealed": false
+    },
+    {
+      "id": "B03",
+      "location": "A titok a barlangban rejtőzik, ki megtalálja az utat, értékes kincset talál. Gellért hegyén mélyen el van rejtve, Fel kell mászni a meredek úton, csak ezután kaphatod meg.",
+      "image": "/images/cave.jpg",
+      "question": "Melyik Mo legmelyebb barlangja?",
+      "answer": "Bányász-barlang",
+      "revealed": false
+    },
+    {
+      "id": "B04",
+      "location": "Fuss, gyorsan, lihegve érkezz, és indulj tovább sietve. Sok fok vezet ide, de még van tovább fölfele. Mikor hited megleled, a túloldalon én is ott leszek. ✝️",
+      "image": "/images/cross.jpg",
+      "question": "Ki találta föl a biztonsági gyufát?",
+      "answer": "Irinyi János",
+      "revealed": false
+    },
+    {
+      "id": "B05",
+      "location": "Erős szél fúj, fönt a magasban, tollam fogom, és nem vagyok kalapban. Ne keresd nálam; indulj a korlát felé és egy kőoszlopon lesz a kutdiák jele.",
+      "image": "/images/statue.jpg",
+      "question": "Nagy levél a kezemben, nincs más csak a kék ég felettem. Mi vagyok?",
+      "answer": "Szabadság szobor",
+      "revealed": false
+    },
+    {
+      "id": "B06",
+      "location": "Elfáradtál? Ha nem, ügess fel! Vár itt egy szép kilátás, üzenet, mese. Na meg lépcsőzés, mindenki kedvence.",
+      "image": "/images/viewpoint.jpg",
+      "question": "Budapest legnépesebb kerülete vagyok, a területemen található a Citadella.",
+      "answer": "XI. kerület",
+      "revealed": false
+    },
+    {
+      "id": "B07",
+      "location": "Helyünk megleled a Google térképen Ott rejtőzik egy QR kód békében. Megtalálod természetközeli rejtekén, a Gellért-hegy déli peremén.",
+      "image": "/images/oak.jpg",
+      "question": "Dombocska vagyok, mégis hegynek hívnak. Csúcsomat mi ékesíti?",
+      "answer": "Citadella",
+      "revealed": false
+    },
+    {
+      "id": "B08",
+      "location": "Egy kis ceruza van Budapesten, Nem lehet egyszerű módon megtalálni. Van egy nagy titok a mellette, A játszóházra érdemes felmászni.",
+      "image": "/images/pencil.jpg",
+      "question": "Európa egyik legszebb fekvésű pályája az 1920-as években a Széchenyi-hegy tetején volt. Melyik sportágról van szó?",
+      "answer": "golf",
+      "revealed": false
+    },
+    {
+      "id": "B09",
+      "location": "Gellért fürdő közelében, víz szökell szelíden, QR kód rejti titkát, hol a forrás rejlik csendesen.",
+      "image": "/images/fountain.jpg",
+      "question": "Melyik testrészben van a legtöbb csont?",
+      "answer": "Kéz",
+      "revealed": false
+    },
+    {
+      "id": "B10",
+      "location": "Troll! - mondták már rám sokszor, mert ide menekülök olykor. Mikor fölöttem elmegy a villamos, itt nyugodtan zajongni hajlamos. Üzenetem egy résben leled, hova bekucorodhatnak emberek.",
+      "image": "/images/under-the-bridge.jpg",
+      "question": "Ki alapította a Kutdáiakot?",
+      "answer": "Csermely Péter",
+      "revealed": false
+    }
+  ]
+}
