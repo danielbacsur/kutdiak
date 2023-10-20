@@ -5,6 +5,7 @@ import { firestore } from "@/lib/utils/firestore";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
+import { useChat } from "ai/react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -41,29 +42,53 @@ export default function Solve({ team, question }: Restricted) {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    if (values.answer === question.answer) {
-      const reference = doc(firestore, "teams", team.id);
-
-      await updateDoc(reference, {
-        current: team.current + 1,
-      });
-
-      router.push(`/team/${team.id}/?success=true`);
-    } else {
-      const reference = doc(firestore, "teams", team.id);
-      const snapshot = await getDoc(reference);
-
-      if (snapshot.exists()) {
-        const data = snapshot.data();
+  const chat = useChat({
+    onFinish: async (e) => {
+      console.log(e.content)
+      if (e.content === "TRUE") {
+        const reference = doc(firestore, "teams", team.id);
 
         await updateDoc(reference, {
-          guesses: data.guesses + 1,
+          current: team.current + 1,
         });
+
+        router.push(`/team/${team.id}/?success=true`);
+      } else {
+        const reference = doc(firestore, "teams", team.id);
+        const snapshot = await getDoc(reference);
+
+        if (snapshot.exists()) {
+          const data = snapshot.data();
+
+          await updateDoc(reference, {
+            guesses: data.guesses + 1,
+          });
+        }
+
+        toast.error("A megoldásod helytelen.");
       }
-      
-      toast.error("A megoldásod helytelen.");
-    }
+    },
+    initialMessages:  [{
+      id: "the-alpha-prompt",
+      role: "system",
+      content: `
+        Te egy online quiz megoldásait ellenőrzöd.
+        Feladatod hogy eldöntsd, hogy az alábbi kérdésre az alábbi válasz helyes-e.
+        Ne foglalkozz helyesírási hibákkal, kis és nagy betűkkel. Ha a válasz lényegében jó akkor fogadd el.
+    
+        A KÉRDÉS: ${question.question}
+    
+        AZ ELVÁRT VÁLASZ: ${question.answer}
+    
+        ELFOGADOTT VÁLASZ ESETÉN CSAK ANNYIT VÁLASZOLJ: TRUE
+        NEM ELFOGADOTT VÁLASZ ESETÉN CSAK ANNYIT VÁLASZOLJ: FALSE
+        ÖSSZESEN EZ A KÉT LEHETŐSÉGED VAN A VÁLASZADÁSKOR. NEM HASZNÁLHATSZ EGYÉB SZAVAKAT.
+      `,
+    }]
+  });
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    chat.append({ role: "user", content: values.answer });
   }
 
   return (
