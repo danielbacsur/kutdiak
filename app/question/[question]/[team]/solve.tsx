@@ -73,8 +73,8 @@ export default function Solve({ team, question }: Restricted) {
       role: "system",
       content: `
         Te egy online quiz megoldásait ellenőrzöd.
-        Feladatod hogy eldöntsd, hogy az alábbi kérdésre az alábbi válasz helyes-e.
-        Ne foglalkozz helyesírási hibákkal, kis és nagy betűkkel. Ha a válasz lényegében jó akkor fogadd el.
+        Feladatod hogy eldöntsd, hogy az alábbi kérdésre beérkező válasz helyes-e.
+        Ne foglalkozz helyesírási hibákkal, kis és nagy betűkkel, ékezetekkel és egy karakteres elírásokkal. Ha a válasz lényegében jó akkor fogadd el.
     
         A KÉRDÉS: ${question.question}
     
