@@ -1,7 +1,7 @@
 {
   "questions": [
     {
-      "id": "A01",
+      "id": "01",
       "location": "Hol a bölcsesség hollói szárnyalnak, A tudás szentélyében, sötét fák alatt. Csend és béke, ott találod a kódot, keresd madárfészek alatt!",
       "image": "/images/corvinus.jpg",
       "question": "Mi a közös a Corvinus Egyetem épülete (Vámpalota) és a Budai Vár tervezésében?",
@@ -9,7 +9,7 @@
       "revealed": false
     },
     {
-      "id": "A02",
+      "id": "02",
       "location": "Vizek fölött át megyek, határt nem ismerve, nyugati partomon a korlát alá vagyok rejtve.",
       "image": "/images/side-of-the-bridge.jpg",
       "question": "A zöld épület a Corvinus szomszédjában az Informatikai Intézet otthona. Mi a hivatalos neve az épületnek?",
@@ -17,7 +17,7 @@
       "revealed": false
     },
     {
-      "id": "A03",
+      "id": "03",
       "location": "Troll! - mondták már rám sokszor, mert ide menekülök olykor. Mikor fölöttem elmegy a villamos, itt nyugodtan zajongni hajlamos. Üzenetem egy résben leled, hova bekucorodhatnak emberek.",
       "image": "/images/under-the-bridge.jpg",
       "question": "Én tartom a hidat, rajtam megy a villamos, Belőlem készülnek a hajók. Mi vagyok én?",
@@ -25,7 +25,7 @@
       "revealed": false
     },
     {
-      "id": "A04",
+      "id": "04",
       "location": "Gellért fürdő közelében, víz szökell szelíden, QR kód rejti titkát, hol a forrás rejlik csendesen.",
       "image": "/images/fountain.jpg",
       "question": "Egy évben hány gyűrűt növeszt egy fa?",
@@ -33,7 +33,7 @@
       "revealed": false
     },
     {
-      "id": "A05",
+      "id": "05",
       "location": "A titok a barlangban rejtőzik, ki megtalálja az utat, értékes kincset talál. Gellért hegyén mélyen el van rejtve, Fel kell mászni a meredek úton, csak ezután kaphatod meg.",
       "image": "/images/cave.jpg",
       "question": "Melyik cseppkő nő föntről lefelé?",
@@ -41,7 +41,7 @@
       "revealed": false
     },
     {
-      "id": "A06",
+      "id": "06",
       "location": "Fuss, gyorsan, lihegve érkezz, és indulj tovább sietve. Sok fok vezet ide, de még van tovább fölfele. Mikor hited megleled, a túloldalon én is ott leszek. ✝️",
       "image": "/images/cross.jpg",
       "question": "Melyik magyar írónak volt birtoka a Sváb-hegyen?",
@@ -49,7 +49,7 @@
       "revealed": false
     },
     {
-      "id": "A07",
+      "id": "07",
       "location": "Elfáradtál? Ha nem, ügess fel! Vár itt egy szép kilátás, üzenet, mese. Na meg lépcsőzés, mindenki kedvence.",
       "image": "/images/viewpoint.jpg",
       "question": "Melyik az a megmaradt testi reakció, aminek ma már tényleg semmi jelentősége?",
@@ -57,7 +57,7 @@
       "revealed": false
     },
     {
-      "id": "A08",
+      "id": "08",
       "location": "Erős szél fúj, fönt a magasban, tollam fogom, és nem vagyok kalapban. Ne keresd nálam; indulj a korlát felé és egy kőoszlopon lesz a kutdiák jele.",
       "image": "/images/statue.jpg",
       "question": "Mikor gördült ki az első fogaskerekű Budán?",
@@ -65,7 +65,7 @@
       "revealed": false
     },
     {
-      "id": "A09",
+      "id": "09",
       "location": "Egy kis ceruza van Budapesten, Nem lehet egyszerű módon megtalálni. Van egy nagy titok a mellette, A játszóházra érdemes felmászni.",
       "image": "/images/pencil.jpg",
       "question": "Hány ezer forintot ajánlott fel Széchenyi István birtokainak egyévi  jövedelme mellett a Magyar Tudományos Akadémia megalapítására?",
@@ -73,7 +73,7 @@
       "revealed": false
     },
     {
-      "id": "A10",
+      "id": "10",
       "location": "Helyünk megleled a Google térképen Ott rejtőzik egy QR kód békében. Megtalálod természetközeli rejtekén, a Gellért-hegy déli peremén.",
       "image": "/images/oak.jpg",
       "question": "Mi a Gellért-hegy tetején található épület neve",
