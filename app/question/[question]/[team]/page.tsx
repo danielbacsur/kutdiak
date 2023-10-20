@@ -16,7 +16,7 @@ export default async function Answer({ params }: Answer) {
     const team = snapshot.data();
     const question = team.questions[team.current];
 
-    if (params.question === "10") {
+    if (params.question === "11") {
       return <End />;
     } else if (question.id !== params.question) {
       return <Restricted team={team} />;
