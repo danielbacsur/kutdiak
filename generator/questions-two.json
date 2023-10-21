@@ -25,7 +25,7 @@
       "revealed": false
     },
     {
-      "id": "04",
+      "id": "09",
       "location": "Fuss, gyorsan, lihegve érkezz, és indulj tovább sietve. Sok fok vezet ide, de még van tovább fölfele. Mikor hited megleled, a túloldalon én is ott leszek. ✝️",
       "image": "/images/cross.jpg",
       "question": "Ki találta föl a biztonsági gyufát?",
@@ -33,7 +33,7 @@
       "revealed": false
     },
     {
-      "id": "05",
+      "id": "06",
       "location": "Erős szél fúj, fönt a magasban, tollam fogom, és nem vagyok kalapban. Ne keresd nálam; indulj a korlát felé és egy kőoszlopon lesz a kutdiák jele.",
       "image": "/images/statue.jpg",
       "question": "Nagy levél a kezemben, nincs más csak a kék ég felettem. Mi vagyok?",
@@ -41,7 +41,7 @@
       "revealed": false
     },
     {
-      "id": "06",
+      "id": "05",
       "location": "Elfáradtál? Ha nem, ügess fel! Vár itt egy szép kilátás, üzenet, mese. Na meg lépcsőzés, mindenki kedvence.",
       "image": "/images/viewpoint.jpg",
       "question": "Budapest legnépesebb kerülete vagyok, a területemen található a Citadella.",
@@ -65,7 +65,7 @@
       "revealed": false
     },
     {
-      "id": "09",
+      "id": "04",
       "location": "Gellért fürdő közelében, víz szökell szelíden, QR kód rejti titkát, hol a forrás rejlik csendesen.",
       "image": "/images/fountain.jpg",
       "question": "Melyik testrészben van a legtöbb csont?",
