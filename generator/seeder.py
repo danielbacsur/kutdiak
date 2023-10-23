@@ -86,8 +86,6 @@ def main():
 
 
         for i in range(2):
-            if i: questions.reverse()
-
             team_id = str(random.randint(100000, 999999))
             team_name = ""
             team_current = 0
