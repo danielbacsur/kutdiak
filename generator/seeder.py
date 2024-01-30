@@ -1,7 +1,8 @@
-import firebase_admin, qrcode, random, json, re, os
+import firebase_admin, qrcode, random, json, re, os, math
 from firebase_admin import credentials, firestore
 
-NUMBER_OF_TEAMS = 10
+NUMBER_OF_TEAMS = 5
+FILES = ["./questions-one.json", "./questions-two.json"]
 
 
 def remove_files(directory: str) -> None:
@@ -61,7 +62,7 @@ def main():
 
     print("Listing team codes and task ids:\n")
 
-    for questions_file in ["./questions-one.json", "./questions-two.json"]:
+    for questions_file in FILES:
         questions_path = os.path.join(absolute_path, questions_file)
 
         # Open questions.json file
@@ -83,7 +84,7 @@ def main():
                 ),
             )
 
-        for i in range(2):
+        for _ in range(math.ceil(NUMBER_OF_TEAMS / len(FILES))):
             team_id = str(random.randint(100000, 999999))
             team_name = ""
             team_current = 0
@@ -99,7 +100,7 @@ def main():
             }
 
             database.collection("teams").document(team_id).set(team_document)
-            print(team_id, "-", questions[0]["id"])
+            print("FILE", questions_file, "-", team_id, "-", questions[0]["id"])
 
     print("\nData feeded successfully!")
 
